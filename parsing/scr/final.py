@@ -94,7 +94,7 @@ else:
         vse = []
         counts = {}
         neds=bs2.find("div", class_="row pb-5").find_all("span", class_="badge bg-soft-dark text-dark ms-2")
-        for p in range(1, len(neds)+1): #Цикл, собирающий информацию о дисциплинах понедельно
+        for p in range(1, len(neds)): #Цикл, собирающий информацию о дисциплинах понедельно
             url1=link+f'&week={p}'
             response1 = requests.get(url1,headers={'User-Agent': UserAgent().chrome})
             if response1.status_code != 200: #Проверка на создание успешного запроса
@@ -111,7 +111,8 @@ else:
                 for e in es:
                     e = e.text.strip().replace("\n", "").replace("\t", "").replace("ЛК", ";ЛК;").replace("ПЗ",
                                                                                                         ";ПЗ;").replace("ЛР",
-                                                                                                                       ";ЛР;")
+                                                                                                                       ";ЛР;").replace("Экзамен",
+                                                                                                                       ";Экзамен;")
                     res = strem.find('ul', class_="list-inline list-separator text-body small").find_all('li',
                                                                                                         class_="list-inline-item")
                     groupa = []
