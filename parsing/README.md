@@ -31,7 +31,7 @@ cd MAI_prepodavately
     ```
 3.  Установите необходимые библиотеки:
     ```bash
-    pip install -r require.txt
+    pip install -r parsing/require.txt
     ```
 4.  Запустите основной скрипт:
     ```bash
